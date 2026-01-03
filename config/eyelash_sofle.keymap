@@ -1,0 +1,72 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/rgb.h>
+
+
+// Wir nutzen RA() für Right-Alt (AltGr) Kombinationen des US-Intl Layouts
+/* * US-International Umlaute Definitionen
+ * Benötigt "English (US, intl., with dead keys)" im OS!
+ */
+#define DE_AE RA(Q)
+#define DE_OE RA(P)
+#define DE_UE RA(Y)
+#define DE_SS RA(S)
+/ {
+    combos {
+        compatible = "zmk,combos";
+        timeout-ms = <50>;
+
+        /* VIM ESCAPE: J + K gleichzeitig */
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <32 33>; 
+            bindings = <&kp ESC>;
+        };
+/* Umlaute mit den neuen RA() Bindings */
+        combo_ae { key-positions = <27 28>; bindings = <&kp DE_AE>; };
+        combo_oe { key-positions = <22 23>; bindings = <&kp DE_OE>; };
+        combo_ue { key-positions = <20 21>; bindings = <&kp DE_UE>; };
+        combo_ss { key-positions = <28 29>; bindings = <&kp DE_SS>; };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        /* LAYER 0 – BASE */
+        layer0 {
+            display-name = "BASE";
+            bindings = <
+&kp ESC    &kp N1     &kp N2    &kp N3    &kp N4     &kp N5           &none  &kp N6        &kp N7     &kp N8         &kp N9    &kp N0     &kp BSPC
+&kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T            &none  &kp Y         &kp U      &kp I          &kp O     &kp P      &kp BSLH
+&kp CAPS   &kp A      &kp S     &kp D     &kp F      &kp G            &none  &kp H         &kp J      &kp K          &kp L     &kp SEMI   &kp APOS
+&kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B            &none  &kp N         &kp M      &kp COMMA      &kp DOT   &kp FSLH   &kp LSHFT
+&none      &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE  &lt 1 ENTER      &none  &lt 2 ENTER   &kp SPACE  &kp RALT       &kp DEL   &kp RCTRL
+            >;
+        };
+
+/* LAYER 1 – NAV (Linker Daumen hält) -> Rechte Hand navigiert */
+layer_1 {
+            display-name = "NAV";
+            bindings = <
+&kp GRAVE  &kp F1          &kp F2          &kp F3           &kp F4           &kp F5           &none  &kp F6           &kp F7           &kp F8           &kp F9          &kp F10    &trans
+&trans     &kp GRAVE       &trans          &trans           &trans           &trans           &none  &kp PG_UP        &kp HOME         &kp PG_DN        &kp END         &kp MINUS  &kp EQUAL
+&trans     &trans          &trans          &trans           &trans           &trans           &none  &trans           &kp LEFT         &kp DOWN         &kp UP          &kp RIGHT  &kp APOS
+&trans     &rgb_ug RGB_OFF &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &none  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI &kp F12    &trans
+&none      &kp C_VOL_DN    &kp C_VOL_UP    &trans           &kp K_MUTE       &trans           &none  &trans           &trans           &trans           &trans          &trans
+            >;
+        };      /* LAYER 2 – SYM & NUM (Rechter Daumen hält) -> Linke Hand macht Klammern */
+        layer_2 {
+            display-name = "SYM";
+            bindings = <
+&kp TILDE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &trans      &kp KP_NUM      &kp KP_DIVIDE   &kp KP_MULTIPLY  &kp KP_MINUS  &trans
+&trans     &trans     &trans     &kp LPAR   &kp RPAR   &trans          &none  &trans      &kp KP_N7       &kp KP_N8       &kp KP_N9        &kp KP_PLUS   &trans
+&trans     &trans     &trans     &kp LBRC   &kp RBRC   &trans          &none  &trans      &kp KP_N4       &kp KP_N5       &kp KP_N6        &kp KP_ENTER  &trans
+&trans     &trans     &trans     &kp LBKT   &kp RBKT   &trans          &none  &trans      &kp KP_N1       &kp KP_N2       &kp KP_N3        &kp KP_ENTER  &trans
+&none      &trans        &trans         &trans       &trans        &trans          &none  &kp KP_N0   &kp KP_DOT      &trans          &trans           &trans
+            >;
+        };
+    };
+};

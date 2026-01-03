@@ -1,0 +1,21 @@
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: urob
+      url-base: https://github.com/urob
+    # Du könntest hier weitere Remotes hinzufügen, falls nötig
+  projects:
+    - name: eyelash_sofle
+      url: https://github.com/a741725193/zmk-sofle
+      revision: main
+    - name: zmk
+      remote: zmkfirmware
+      revision: v0.3.0
+      import: app/west.yml
+    - name: zmk-helpers
+      remote: urob
+      revision: main
+  self:
+    path: boards
+
