@@ -23,6 +23,7 @@ US-International ZMK keymap for the **Eyelash Sofle Split Keyboard**, optimized 
 ---
 
 ## Layers Overview
+![Sofle](keymap-drawer/eyelash_sofle.svg)
 
 ### Layer 0 – Base
 Standard typing layer with US-Intl keys and RA() combos for German characters.
@@ -52,20 +53,13 @@ Hold the right thumb key to access symbols, brackets, and numpad – optimized f
 ## Installation
 
 1. Fork or clone this repo.
-2. Build your keymap using [ZMK build instructions](https://zmk.dev/docs/development/building).  
+2. Build your keymap using [ZMK online editor](https://nickcoutsos.github.io/keymap-editor/).  
 3. Flash the resulting firmware to your Eyelash Sofle keyboard.
 4. Enjoy Vim-friendly coding with German support!
 
 ---
-
-## For German Users / Deutsche Nutzer
-
-This keymap supports German characters via RA() combos – perfect for **beginners switching from a US layout**.
-
----
-
 ## License
 
 MIT License – feel free to fork and adapt for your own keymap.
-![Sofle键位图](keymap-drawer/eyelash_sofle.svg)
+
 
