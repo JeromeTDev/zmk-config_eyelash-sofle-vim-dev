@@ -41,9 +41,9 @@ Coding-focused layer with symbols, brackets, and a numpad-style layout.
 | Combo | Keys | Output |
 |------|------|--------|
 | `JK` | J + K | ESC (Vim Normal Mode) |
-| `AE` | Q + W | ä |
-| `OE` | P + O | ö |
-| `UE` | Y + U | ü |
+| `AE` | A + S | ä |
+| `OE` | O + P | ö |
+| `UE` | U + I | ü |
 | `SS` | S + D | ß |
 
 > Combos can be adjusted in `behaviors.dtsi` and `keymap.dtsi`.
