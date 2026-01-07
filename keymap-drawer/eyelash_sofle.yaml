@@ -13,7 +13,7 @@ layers:
   - {t: '8', s: '*'}
   - {t: '9', s: (}
   - {t: '0', s: )}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:backspace$$', s: '$$mdi:backspace-reverse-outline$$'}
   - $$mdi:keyboard-tab$$
   - Q
   - W
@@ -58,11 +58,11 @@ layers:
   - $$mdi:apple-keyboard-option$$
   - LGUI
   - {t: '$$mdi:keyboard-space$$', h: NAV}
-  - $$mdi:keyboard-esc$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:keyboard-space$$', h: SYM}
-  - $$mdi:apple-keyboard-option$$
+  - {t: '-', s: _}
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
   NAV:
