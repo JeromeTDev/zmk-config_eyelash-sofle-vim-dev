@@ -55,16 +55,16 @@ layers:
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-control$$
-  - LGUI
   - $$mdi:apple-keyboard-option$$
+  - LGUI
   - {t: '$$mdi:keyboard-space$$', h: NAV}
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:keyboard-space$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:keyboard-space$$', h: SYM}
   - $$mdi:apple-keyboard-option$$
-  - $$mdi:backspace-reverse-outline$$
-  - $$mdi:apple-keyboard-control$$
+  - '{'
+  - '}'
   NAV:
   - {t: '`', s: '~'}
   - F1
