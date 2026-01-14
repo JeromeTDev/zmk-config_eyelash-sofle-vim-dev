@@ -18,13 +18,13 @@
 ---
 include:
   # Sofle linke Hälfte (Peripheral)
-  - board: eyelash_sofle
+  - board: eyelash_sofle_left
     shield: eyelash_sofle_left
     cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: sofle_left
 
   # Sofle rechte Hälfte (Peripheral)
-  - board: eyelash_sofle
+  - board: eyelash_sofle_right
     shield: eyelash_sofle_right
     cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: sofle_right
