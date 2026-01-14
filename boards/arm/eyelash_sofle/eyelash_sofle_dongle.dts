@@ -1,0 +1,10 @@
+#include "eyelash_sofle.dtsi"
+
+/ {
+    keyboard {
+        compatible = "zmk,keyboard";
+
+        // Dongle: Central, keine Tasten
+    };
+};
+
