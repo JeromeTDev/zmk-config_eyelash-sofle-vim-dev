@@ -1,0 +1,16 @@
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+};
+
+/ {
+    kscan0: kscan0 {
+        compatible = "zmk,kscan-dummy";
+        label = "KSCAN";
+        #gpio-cells = <0>;
+        rows = <1>;
+        cols = <1>;
+    };
+};
+
