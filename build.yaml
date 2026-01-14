@@ -17,26 +17,29 @@
 
 ---
 include:
-  # Dongle (Central) für BLE → USB-HID
-  - board: seeeduino_xiao_ble
-    shield: posix_seeed_xiao
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
-    artifact-name: xiao_dongle
-
-    # Sofle linke Hälfte (Peripheral)
-  - board: eyelash_sofle_left
-    shield: splitkb_aurora_sofle_left
+  # Sofle linke Hälfte (Peripheral)
+  - board: eyelash_sofle
+    shield: eyelash_sofle_left
     cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: sofle_left
 
   # Sofle rechte Hälfte (Peripheral)
-  - board: eyelash_sofle_right
+  - board: eyelash_sofle
     shield: eyelash_sofle_right
     cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: sofle_right
 
-  # Reset Settings (falls benötigt)
+  # BLE Dongle (Central) für Studio RPC → USB-HID
+  - board: seeeduino_xiao_ble
+    shield: sofle_dongle       # hier der Dongle-Shield
+    snippet: studio-rpc-usb-uart
+    cmake-args: 
+      -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
+      -DCONFIG_ZMK_STUDIO=y
+      -DCONFIG_ZMK_STUDIO_LOCKING=n
+    artifact-name: xiao_dongle
+
+  # Reset Settings (optional)
   - board: eyelash_sofle
     shield: settings_reset
     artifact-name: sofle_reset

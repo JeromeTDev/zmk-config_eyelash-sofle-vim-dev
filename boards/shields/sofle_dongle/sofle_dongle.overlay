@@ -1,0 +1,15 @@
+/ {
+    keyboard {
+        compatible = "zmk,keyboard";
+
+        bluetooth {
+            label = "dongle";
+            role = "central";    // wichtig: Central für BLE
+        };
+
+        usb_hid {
+            enabled = true;      // USB-HID aktiv
+        };
+    };
+};
+
