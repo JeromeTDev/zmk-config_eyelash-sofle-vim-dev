@@ -27,4 +27,9 @@ include:
 
   # BLE Dongle (Central) für Studio RPC → USB-HID
   - board: seeeduino_xiao_ble
+    snippet: studio-rpc-usb-uart
+    cmake-args: >
+      -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
+      -DCONFIG_ZMK_STUDIO=y
+      -DCONFIG_ZMK_STUDIO_LOCKING=n
     artifact-name: xiao_dongle
