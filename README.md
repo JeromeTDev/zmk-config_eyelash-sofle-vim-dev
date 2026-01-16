@@ -4,23 +4,6 @@ US-International ZMK keymap for the **Eyelash Sofle Split Keyboard**, optimized 
 
 ---
 
-## Features
-
-- **Vim-friendly layout**
-  - Press `J + K` simultaneously to send `ESC` (Vim Normal Mode)
-- **US-International base layout**
-  - Designed for `English (US, intl., with dead keys)` OS layout
-- **German character support via combos**
-  - `ä` → RA(Q)
-  - `ö` → RA(P)
-  - `ü` → RA(Y)
-  - `ß` → RA(S)
-- **Developer-focused layers**
-  - Navigation, symbols, brackets, and numpad
-- **Optional RGB controls** (if supported by your board)
-
----
-
 ## Layers Overview
 
 ![Sofle](keymap-drawer/eyelash_sofle.svg)
